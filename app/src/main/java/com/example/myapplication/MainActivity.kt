@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
     private var operation = ""
     private var text = ""
     private var number = ""
-    private var counter1 = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -112,7 +111,6 @@ class MainActivity : AppCompatActivity() {
 
     fun clear(clickedView: View) {
         tvResult.text = "0"
-        //counter1 = 0
         operation = ""
         operand = 0.0
         number = "0"
