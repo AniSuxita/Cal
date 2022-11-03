@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         tvResult = findViewById(R.id.tvResult)
-// tvResult პოულობს ტექსტვიუს აიდით და იძახებს მას
 
     }
 
@@ -30,24 +29,15 @@ class MainActivity : AppCompatActivity() {
 
         if (clickedView is TextView) {
             text = tvResult.text.toString()
-            // tv.Result ზევით ჩაწერილი tvResult = findViewById(R.id.tvResult) კოდის მეშვეობით
-            //პოულობს იმ Textview-ს სადაც თავდაპირველად გვიწერია 0 და ამ 0-ს სტრინგის ტიპის ობიექტად აქცევს
-            // და გამოდის რომ text არის "0"
 
             number = clickedView.text.toString()
 
-            // იმ View-ს ,რომელსაც მომხმარებელი დააჭერს იმის ტექსტი გადადის სტრინგში და ეს მნიშვნელობა ენიჭება number-ს
-            //ანუ თუ იმ Textview-ს დავაჭერთ, რომელის ტექსტშიც წერია 8 მაშინ number იიღებს 8-ის მნიშვნელობას
-
             if (text == "0"){
                 text = ""
-                //თუ თექსტი არის 0 მაშინ ტექსტი მთლიანად იშლება და ხდება ცარიელი სტრინგი
             }
 
             val result = text + number
-            //აქ ცარიელ სტრინგს მიემატება სტრინგი number
             tvResult.text = result
-            // და Textview-ში რომლის აიდიცაა tv.Result მაგაში ტესტის ადგილას გამოისახება result
         }
     }
 
@@ -77,25 +67,17 @@ class MainActivity : AppCompatActivity() {
 
     fun operationclick(clickedView: View){
 
-        // counter1 ++
 
         if (clickedView is TextView ) {
             if (tvResult.text.toString() != "") {
                 operand = tvResult.text.toString().toDouble()
                 operation = clickedView.text.toString()
                 tvResult.text = ""
-                //carielis gadayvanas cdilobs doubleshi da imitom icrasheba
             } else {
 
-                //operation = ""
-                //if (clickedView is TextView){
-                // operation = clickedView.text.toString()
                 operation = clickedView.text.toString()
             }
 
-
-            //equalclick(clickedView)//equals click crashavs radgan iqac carielis gadayvanas cdilobs doublshi
-            //counter1 = 0
 
         }
 
@@ -124,7 +106,7 @@ class MainActivity : AppCompatActivity() {
             operation = ""
             operand = 0.0
             number = "0"
-
+            text = ""
         }
     }
 
@@ -134,13 +116,14 @@ class MainActivity : AppCompatActivity() {
         operation = ""
         operand = 0.0
         number = "0"
+        text = ""
     }
     fun delastclick(clickedView: View){
 
         if (clickedView is TextView){
             if(tvResult.text != "") {
-// != არ უდრის
-                tvResult.text = tvResult.text.dropLast(1) // წაუშლის ბოლო 1-ს
+
+                tvResult.text = tvResult.text.dropLast(1) 
             }
         }
     }
